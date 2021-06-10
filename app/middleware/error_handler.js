@@ -3,7 +3,6 @@ module.exports = (option, app) => {
     try {
       // 等待控制器中的代码执行完，如果出现异常则进入 catch
       await next()
-      console.log("ctx.body: ", ctx.status)
       if (ctx.status === 404 && !ctx.body) {
         ctx.body = {
           msg: 'fail',

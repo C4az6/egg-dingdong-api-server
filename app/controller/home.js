@@ -5,9 +5,18 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-
-    ctx.throw(500, '我是故意抛出异常的。')
-    ctx.body = 'hi, egg';
+    let list = [
+      {
+        id: 1,
+        name: '牛奶'
+      },
+      {
+        id: 2,
+        name: '菠萝'
+      }
+    ]
+    ctx.apiSuccess(list)
+    // ctx.apiFail('数据查询失败!')
   }
 }
 
